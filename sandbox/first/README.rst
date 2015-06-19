@@ -3,8 +3,17 @@ The First Django App
 
 Based on the tutorial in Django documentation.
 
-django-admin
+Basic Things
 ------------
+
+There are basic scripts and files you need to start a simple Django
+application.
+Buildout will make things a lot easier and save a lot time.
+Here, the only requirment is you have Python installed.
+We will start from Python version 3.x.
+
+django-admin
+~~~~~~~~~~~~
 
 Buildout will be used for the whole playing experience.
 
@@ -39,7 +48,7 @@ To runserver, we need setup the environment variable
 Here are the steps::
 
   $ export DJANGO_SETTINGS_MODULE=leocornus_django_sandbox_first.settings
-  $ bin/first-manage runserver
+  $ buildout/bin/first-manage runserver
 
 migrate
 ~~~~~~~
@@ -48,3 +57,5 @@ Why we need execute migrate command?::
 
   $ bin/first-manage migrate
 
+Test Driving
+------------

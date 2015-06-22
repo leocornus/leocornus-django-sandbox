@@ -122,3 +122,12 @@ Create some models for the polls app and then run the following tasks
 
   $ buildout/bin/first-manage makemigrations polls
   $ buildout/bin/first-manage migrate
+
+Manage models on Django admin dashboard
+---------------------------------------
+
+First of all we need create the superuser.::
+
+  $ buildout/bin/django-admin createsuperuser
+
+

@@ -116,3 +116,9 @@ Django admin script has a task to create Django app.::
   $ buildout/bin/django-admin startapp polls sandbox/first/.../polls
 
 It will create the skeleton for a Django app.
+
+Create some models for the polls app and then run the following tasks
+::
+
+  $ buildout/bin/first-manage makemigrations polls
+  $ buildout/bin/first-manage migrate

@@ -107,3 +107,12 @@ Then, we could run test cases using this command::
 
 moch and testing db
 ~~~~~~~~~~~~~~~~~~~
+
+Start first app
+---------------
+
+Django admin script has a task to create Django app.::
+
+  $ buildout/bin/django-admin startapp polls sandbox/first/.../polls
+
+It will create the skeleton for a Django app.

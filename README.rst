@@ -12,4 +12,4 @@ Stories
 License
 -------
 
-`GNU General Public License Verion 2 <LICENSE>`_
+`GNU General Public License Version 2 <LICENSE>`_

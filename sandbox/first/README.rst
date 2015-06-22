@@ -1,9 +1,9 @@
-The First Django App
-====================
+The First Django Project 
+========================
 
 Based on the tutorial in Django documentation.
 
-Basic Things
+django-admin
 ------------
 
 There are basic scripts and files you need to start a simple Django
@@ -12,12 +12,9 @@ Buildout will make things a lot easier and save a lot time.
 Here, the only requirment is you have Python installed.
 We will start from Python version 3.x.
 
-django-admin
-~~~~~~~~~~~~
-
 Buildout will be used for the whole playing experience.
 
-using the following part to generate django-admin script.::
+using the following part to generate **django-admin** script.::
 
   [django-admin]
   recipe = zc.recipe.egg
@@ -25,7 +22,16 @@ using the following part to generate django-admin script.::
   entry-points = django-admin=django.core.management:execute_from_command_line
 
 start a project
-~~~~~~~~~~~~~~~
+---------------
+
+A Django project is like a hosting place for hosting Django apps.
+A projct will have the following basic files::
+
+  [PROJECT NAME]
+    |- __init__.py
+    |- settings.py
+    |- urls.py
+    |- wsgi.py
 
 create a project using the Django admin script.::
 
@@ -55,7 +61,49 @@ migrate
 
 Why we need execute migrate command?::
 
-  $ bin/first-manage migrate
+  $ buildout/bin/first-manage migrate
 
 Test Driving
 ------------
+
+Mainly try to anwser the following questions:
+
+- how to prepare testcases?
+- how to run testcase?
+- how to manage and mock the dependences for testcases?
+
+preparing test cases
+~~~~~~~~~~~~~~~~~~~~
+
+Django has a TestCase class in module **django.test**.
+The simple way to create a test case is extending this class.
+A simple test case clould as simple as this::
+
+  from django.test import TestCase
+
+  class BasicTestCase(TestCase):
+      """a simple test case"""
+
+      def setUp(self):
+          """Empty for now."""
+
+      def test_assert(self):
+          """testing assert functions"""
+          self.assertEqual('abc', 'abc')
+
+run test cases
+~~~~~~~~~~~~~~
+
+How to run test cases depends on how the test cases are organized.
+In this case here, we storied the test cases like following::
+
+  leocornus_django_sandbox_first/
+    |- test/
+        |- testBasic.py
+
+Then, we could run test cases using this command::
+
+  $ buildout/bin/first-manage test leocornus_django_sandbox_first.test
+
+moch and testing db
+~~~~~~~~~~~~~~~~~~~

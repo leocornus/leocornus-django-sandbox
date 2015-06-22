@@ -15,7 +15,7 @@ class Question(models.Model):
         """the utility function for tostring"""
         return self.question_text
 
-    def was_publish_recently(self):
+    def was_published_recently(self):
         """return true if it is publish less than one day"""
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 

@@ -130,4 +130,7 @@ First of all we need create the superuser.::
 
   $ buildout/bin/django-admin createsuperuser
 
+The First View
+--------------
 
+The index page is simple and straigforward.

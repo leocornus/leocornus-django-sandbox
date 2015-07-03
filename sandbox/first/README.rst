@@ -45,6 +45,10 @@ generate the manage script for first project.::
   [first-manage]
   recipe = zc.recipe.egg
   eggs = ${buildout:eggs}
+  # using initialization to set the settings path.
+  initialization =
+      import os
+      os.environ["DJANGO_SETTINGS_MODULE"]="leocornus_django_sandbox_first.settings"
   entry-points = first-manage=django.core.management:execute_from_command_line
   extra-paths = 
       ${buildout:directory}/../sandbox/first
@@ -52,11 +56,8 @@ generate the manage script for first project.::
 Runserver
 ~~~~~~~~~
 
-To runserver, we need setup the environment variable
-**DJANGO_SETTINGS_MODULE**.
-Here are the steps::
+Here are the command:: 
 
-  $ export DJANGO_SETTINGS_MODULE=leocornus_django_sandbox_first.settings
   $ buildout/bin/first-manage runserver
 
 migrate

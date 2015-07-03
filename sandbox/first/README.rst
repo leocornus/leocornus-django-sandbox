@@ -3,6 +3,9 @@ The First Django Project
 
 Based on the tutorial in Django documentation.
 
+.. contents:: Table of Contents
+    :depth: 5
+
 django-admin
 ------------
 
@@ -129,6 +132,7 @@ Manage models on Django admin dashboard
 First of all we need create the superuser.::
 
   $ buildout/bin/django-admin createsuperuser
+  $ buildout/bin/django-admin changepassword admin
 
 The First View
 --------------
